@@ -4,8 +4,27 @@ const mobileMenu = document.querySelector('.mobile-menu');
 
 if (hamburger && mobileMenu) {
   hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.innerHTML = isOpen ? '✕' : '&#9776;';
+  });
+
+  // Close menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      hamburger.innerHTML = '&#9776;';
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      hamburger.innerHTML = '&#9776;';
+    }
   });
 }
 
