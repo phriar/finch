@@ -227,7 +227,7 @@ em { font-style: italic; }
   inset: 0;
   background: 
     linear-gradient(135deg, rgba(125, 140, 110, 0.15) 0%, transparent 60%),
-    url('../images/hero.jpg') center/cover no-repeat;
+    url('images/hero.jpg') center/cover no-repeat;
   background-color: var(--cream);
 }
 .hero-overlay {
@@ -454,7 +454,7 @@ em { font-style: italic; }
 /* =================== RETREAT FEATURE =================== */
 .retreat-bg {
   position: relative;
-  background: url('../images/retreat.jpg') center/cover no-repeat;
+  background: url('images/retreat.jpg') center/cover no-repeat;
   background-color: var(--charcoal);
 }
 .retreat-overlay {
